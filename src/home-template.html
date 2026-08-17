@@ -21,6 +21,14 @@ __ANALYTICS__
 .section + .section{border-top:1.5px solid var(--border);}
 .teaser-copy{max-width:60ch;color:var(--ink-muted);font-size:15px;line-height:1.6;margin-bottom:16px;}
 .teaser-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+
+/* Home's section labels swap Fredoka (too playful/rounded at this size) for a
+   crisp Work Sans small-caps treatment; the section-to-section rule above is
+   already enough separation, so the header no longer needs its own line too. */
+.section-head h2{
+  font-family:'Work Sans',sans-serif;font-weight:700;letter-spacing:.09em;
+  font-size:14px;color:var(--heading);
+}
 </style>
 </head>
 <body data-page="home">
@@ -34,7 +42,6 @@ __NAVBAR__
     <div class="section-head">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.86 6.02 6.53.68-4.9 4.48 1.33 6.5L12 16.9l-5.82 3.38 1.33-6.5-4.9-4.48 6.53-.68z"/></svg>
       <h2 id="destacados-h">Lo más pedido</h2>
-      <div class="section-head-rule"></div>
     </div>
     <div class="featured-grid">
       <a class="f-card" href="menu.html">
@@ -67,7 +74,6 @@ __NAVBAR__
     <div class="section-head">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
       <h2 id="encuentranos-h">Encuéntranos</h2>
-      <div class="section-head-rule"></div>
     </div>
     <p class="teaser-copy">Visítanos en cualquiera de nuestras sucursales. Aún no tomamos pedidos por WhatsApp ni apps, así que te esperamos en persona para prepararte tu bebida.</p>
     <div class="teaser-ctas">
@@ -79,7 +85,6 @@ __NAVBAR__
     <div class="section-head">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 8.6c0 5.4-8.8 10.9-8.8 10.9S3.2 14 3.2 8.6a4.6 4.6 0 0 1 8.8-1.9 4.6 4.6 0 0 1 8.8 1.9z"/></svg>
       <h2 id="historia-h">Nuestra historia</h2>
-      <div class="section-head-rule"></div>
     </div>
     <p class="teaser-copy">Un Vocho rojo, un buen café y las ganas de compartirlo con quien se acerque: así es Starvochs. Todavía estamos escribiendo esta parte con calma, para contártela bien.</p>
     <div class="teaser-ctas">
