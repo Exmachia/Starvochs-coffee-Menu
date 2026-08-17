@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6LB4R7208"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G6LB4R7208');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#F4E9CE"/>
+<meta name="color-scheme" content="light"/>
+<meta name="description" content="Ubicaciones y horarios de Starvochs Coffee."/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Starvochs Coffee"/>
+<link rel="icon" href="assets/logo.png"/>
+<link rel="apple-touch-icon" href="assets/logo.png"/>
+<title>Starvochs Coffee · Sucursales</title>
+<link rel="stylesheet" href="assets/brand.css"/>
+<style>
+.page-hero{padding:44px 0 8px;}
+@media (max-width:480px){.page-hero{padding:28px 0 4px;}}
+.page-hero p{max-width:56ch;color:var(--ink-muted);font-size:15.5px;line-height:1.6;margin-top:10px;}
+.pending{
+  margin-top:26px;background:var(--surface);border:1px solid var(--border);border-radius:20px;
+  padding:22px 20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;
+}
+.pending svg{width:30px;height:30px;color:var(--accent);}
+.pending p{color:var(--ink);font-size:15px;line-height:1.6;margin:0;max-width:56ch;}
+.section{padding:34px 0 44px;}
+</style>
+</head>
+<body data-page="sucursales">
+
+<header class="site-nav">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href="index.html">
+      <img class="site-nav-logo" src="assets/logo.png" alt="Starvochs Coffee, inicio"/>
+      <span class="site-nav-word">Starvochs Coffee</span>
+    </a>
+    <nav class="site-nav-links" aria-label="Navegación principal">
+      <a href="index.html" data-page="home">Inicio</a>
+      <a href="menu.html" data-page="menu">Menú</a>
+      <a href="sucursales.html" data-page="sucursales">Sucursales</a>
+      <a href="historia.html" data-page="historia">Historia</a>
+    </nav>
+    <button class="site-nav-burger" id="navBurger" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navPanel">
+      <svg class="icon-burger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="site-nav-panel" id="navPanel" aria-label="Navegación principal" hidden>
+    <a href="index.html" data-page="home">Inicio</a>
+    <a href="menu.html" data-page="menu">Menú</a>
+    <a href="sucursales.html" data-page="sucursales">Sucursales</a>
+    <a href="historia.html" data-page="historia">Historia</a>
+  </nav>
+</header>
+
+
+<div class="wrap">
+  <section class="page-hero">
+    <h1 class="brand-title" style="font-size:clamp(24px,5vw,36px);">Sucursales</h1>
+    <p>Dónde encontrarnos y a qué hora estamos abiertos.</p>
+  </section>
+
+  <section class="section">
+    <div class="pending">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+      <p>Estamos afinando la dirección, el horario y el mapa de cada sucursal para ponerlos aquí. Mientras tanto, escríbenos por redes y con gusto te decimos cómo llegar.</p>
+      <div class="teaser-ctas" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://wa.me/523125507416" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+        <a class="btn btn-ghost" href="menu.html">Ver el menú</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+<hr class="footer-rule"/>
+<footer class="footer">
+  <p class="script">Trae tu termo o vaso y recibe $2 de descuento en cualquier bebida</p>
+  <p class="thanks">Gracias por ser parte de nuestra historia ♥</p>
+  <nav class="social-row" aria-label="Redes sociales de Starvochs Coffee">
+    <a class="social-link" href="https://www.facebook.com/StarvochsCoffee/?locale=es_LA" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21.5v-8.1h2.7l.4-3.2h-3.1V8.2c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.2H7.4v3.2H10v8.1z"/></svg>
+      <span>Starvochs Coffee</span>
+    </a>
+    <a class="social-link" href="https://wa.me/523125507416" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5a9.3 9.3 0 0 0-8 14L2.5 21.5l5.2-1.4A9.3 9.3 0 1 0 12 2.5zm5.4 13.2c-.2.6-1.3 1.2-1.8 1.3-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.7-1.2-4.4-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9 1-2.2.2-.3.5-.3.6-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.6.7 1.7.1.2.1.3 0 .5-.1.2-.1.3-.3.5-.1.1-.3.3-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1 .2-.3.4-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.2.1.5-.1 1z"/></svg>
+      <span>+52 312 550 7416</span>
+    </a>
+    <a class="social-link" href="https://www.instagram.com/starvochs_coffee/" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.1" cy="6.9" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>@starvochs_coffee</span>
+    </a>
+  </nav>
+</footer>
+
+</div>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

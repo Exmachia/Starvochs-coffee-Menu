@@ -1,39 +1,49 @@
 #!/usr/bin/env python3
-"""Rebuild index.html from src/ + assets/ (inlines fonts and logo as base64).
+"""Assemble the site's pages from src/*-template.html + partials/.
+
+Fonts, brand CSS and JS are plain static files under assets/ now (no more
+base64 inlining) so the browser caches them once across every page.
 
 Usage:
     python3 build.py
 
-Edit src/menu-template.html (markup/CSS) or src/menu-script.js (data/behavior),
-then rerun this to regenerate the self-contained index.html.
+Edit src/<page>-template.html (markup/page-specific CSS) or
+partials/navbar.html / partials/footer.html (shared chrome), then rerun this.
 """
-import base64
 import pathlib
+import shutil
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src"
+PARTIALS = ROOT / "partials"
 ASSETS = ROOT / "assets"
 
-
-def b64(path: pathlib.Path) -> str:
-    return base64.b64encode(path.read_bytes()).decode("ascii")
+PAGES = {
+    "home-template.html": "index.html",
+    "menu-template.html": "menu.html",
+    "sucursales-template.html": "sucursales.html",
+    "historia-template.html": "historia.html",
+}
 
 
 def main():
-    tpl = (SRC / "menu-template.html").read_text()
-    script = (SRC / "menu-script.js").read_text()
+    navbar = (PARTIALS / "navbar.html").read_text()
+    footer = (PARTIALS / "footer.html").read_text()
+    analytics = (PARTIALS / "analytics.html").read_text()
 
-    out = (
-        tpl.replace("__SCRIPT__", script)
-        .replace("__FREDOKA_B64__", b64(ASSETS / "fonts" / "fredoka.woff2"))
-        .replace("__CAVEAT_B64__", b64(ASSETS / "fonts" / "caveat.woff2"))
-        .replace("__WORKSANS_B64__", b64(ASSETS / "fonts" / "worksans.woff2"))
-        .replace("__LOGO_B64__", b64(ASSETS / "logo.png"))
-    )
+    for src_name, out_name in PAGES.items():
+        tpl = (SRC / src_name).read_text()
+        out = (
+            tpl.replace("__NAVBAR__", navbar)
+            .replace("__FOOTER__", footer)
+            .replace("__ANALYTICS__", analytics)
+        )
+        (ROOT / out_name).write_text(out)
+        print(f"Built {out_name}")
 
-    out_path = ROOT / "index.html"
-    out_path.write_text(out)
-    print(f"Built {out_path} ({len(out):,} bytes)")
+    # Keep the menu's JS in assets/ (served directly) in sync with its editable source.
+    shutil.copyfile(SRC / "menu-script.js", ASSETS / "menu.js")
+    print("Synced assets/menu.js")
 
 
 if __name__ == "__main__":
