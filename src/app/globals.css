@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+/* Starvochs Coffee is a fixed cream-and-pine brand identity taken straight from the
+   physical poster: this site commits to that single light palette on purpose,
+   regardless of OS/device theme, so it always reads as "the menu on the wall". */
+@theme {
+  --color-bg: #f4e9ce;
+  --color-surface: #fbf3df;
+  --color-surface-2: #f1e3be;
+  --color-border: #dcc793;
+  --color-ink: #2a2118;
+  --color-ink-muted: #6b5b44;
+  --color-heading: #173625;
+  --color-heading-soft: #2c5a42;
+  --color-accent: #c22a2e;
+  --color-accent-deep: #8f1d22;
+  --color-accent-contrast: #fbf3df;
+  --color-chip-bg: #efe2be;
+
+  --font-sans: var(--font-work-sans), system-ui, sans-serif;
+  --font-display: var(--font-fredoka), sans-serif;
+  --font-script: var(--font-caveat), cursive;
+}
+
+:root {
+  --shadow: rgba(23, 54, 37, 0.16);
+  --backdrop: rgba(15, 28, 20, 0.6);
+  --nav-h: 60px;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    -webkit-touch-callout: none;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 0, 0, 0.035) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+    overscroll-behavior-y: none;
+  }
+}
+
+@utility wrap {
+  margin-inline: auto;
+  max-width: 1000px;
+  padding-inline: 18px;
+
+  @media (max-width: 480px) {
+    padding-inline: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
