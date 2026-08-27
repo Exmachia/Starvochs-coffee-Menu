@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+@import '../styles/leaflet.css';
+
+/* Starvochs Coffee is a fixed cream-and-pine brand identity taken straight from the
+   physical poster: this site commits to that single light palette on purpose,
+   regardless of OS/device theme, so it always reads as "the menu on the wall". */
+@theme {
+  --color-bg: #f4e9ce;
+  --color-surface: #fbf3df;
+  --color-surface-2: #f1e3be;
+  --color-border: #8b7d5b;
+  --color-ink: #2a2118;
+  --color-ink-muted: #6b5b44;
+  --color-heading: #173625;
+  --color-heading-soft: #2c5a42;
+  --color-accent: #c22a2e;
+  --color-accent-deep: #8f1d22;
+  --color-accent-contrast: #fbf3df;
+  --color-chip-bg: #efe2be;
+
+  --font-sans: var(--font-work-sans), system-ui, sans-serif;
+  --font-display: var(--font-fredoka), sans-serif;
+  --font-script: var(--font-caveat), cursive;
+
+  /* Shared deceleration curve for interactive motion (drawer, modal, hover/press) —
+   * a smooth, no-overshoot settle, matching a critically-damped spring's feel
+   * without adding a spring library for a site with no drag gestures to grab. */
+  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --shadow: rgba(23, 54, 37, 0.16);
+  --backdrop: rgba(15, 28, 20, 0.6);
+  --nav-h: 60px;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    -webkit-touch-callout: none;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+    overscroll-behavior-y: none;
+  }
+}
+
+@utility wrap {
+  margin-inline: auto;
+  max-width: 1000px;
+  padding-inline: 18px;
+
+  @media (max-width: 480px) {
+    padding-inline: 14px;
+  }
+}
+
+/* Leaflet renders its own chrome outside React's tree (popups, zoom control),
+   so it can't pick up Tailwind utility classes — themed here instead, from the
+   same tokens as everything else. */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: 0 10px 24px -12px var(--shadow);
+}
+
+.leaflet-popup-content {
+  margin: 10px 13px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.leaflet-popup-content a {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.leaflet-popup-tip {
+  background: var(--color-surface);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--color-ink-muted);
+}
+
+.leaflet-control-zoom a {
+  border-color: var(--color-border) !important;
+  background: var(--color-surface) !important;
+  color: var(--color-heading) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--color-surface-2) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(251, 243, 223, 0.85) !important;
+  color: var(--color-ink-muted) !important;
+  font-family: var(--font-sans);
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-ink-muted) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
