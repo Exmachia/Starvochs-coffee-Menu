@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${fredoka.variable} ${caveat.variable} ${workSans.variable}`}>
-      <body className="font-sans">
+      <body className="flex min-h-screen flex-col font-sans">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-heading focus:px-4 focus:py-2 focus:text-accent-contrast focus:no-underline"
@@ -38,7 +38,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Saltar al contenido
         </a>
         <Navbar />
-        <main id="main-content">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <div className="wrap">
           <Footer />
         </div>

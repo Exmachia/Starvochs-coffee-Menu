@@ -234,10 +234,15 @@ export function MenuClient() {
   }, [])
 
   return (
-    <div className="mx-auto max-w-[1000px] px-[18px] pt-5 pb-[calc(56px+env(safe-area-inset-bottom))] max-[480px]:px-[14px] max-[480px]:pt-4 max-[480px]:pb-[calc(48px+env(safe-area-inset-bottom))]">
+    <div className="wrap pt-5 pb-[calc(56px+env(safe-area-inset-bottom))] max-[480px]:pt-4 max-[480px]:pb-[calc(48px+env(safe-area-inset-bottom))]">
+      <h1 className="sr-only">Menú</h1>
       <div className="sticky top-[var(--nav-h)] z-20 -mx-[18px] bg-bg pt-2.5 pb-3 max-[480px]:-mx-[14px]">
-        <div className="overflow-x-auto px-[18px] [mask-image:linear-gradient(90deg,transparent_0,#000_18px,#000_calc(100%-18px),transparent_100%)] [scrollbar-width:none] max-[480px]:px-[14px] [&::-webkit-scrollbar]:hidden">
-          <div role="tablist" aria-label="Categorías del menú" className="flex w-max gap-2 p-0.5">
+        <div className="overflow-x-auto px-[18px] [mask-image:linear-gradient(90deg,transparent_0,#000_18px,#000_calc(100%-18px),transparent_100%)] [scrollbar-width:none] max-[480px]:px-[14px] min-[1024px]:overflow-visible min-[1024px]:[mask-image:none] [&::-webkit-scrollbar]:hidden">
+          <div
+            role="tablist"
+            aria-label="Categorías del menú"
+            className="flex w-max gap-2 p-0.5 min-[1024px]:w-full min-[1024px]:flex-wrap"
+          >
             {TABS.map((tab) => {
               const selected = highlighted === tab.id
               return (

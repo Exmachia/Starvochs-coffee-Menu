@@ -9,7 +9,7 @@ type ButtonProps = {
 }
 
 const base =
-  'inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-[22px] py-3 text-[15px] font-bold no-underline transition-[transform,background,color] duration-150 ease-out active:scale-[0.96]'
+  'inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-[22px] py-3 text-[15px] font-bold no-underline transition-[transform,background,color] duration-150 ease-fluid active:scale-[0.96]'
 
 const variants = {
   primary: 'bg-heading text-accent-contrast hover:bg-heading-soft',

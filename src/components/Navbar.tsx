@@ -19,7 +19,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b-2 border-border bg-bg pt-[env(safe-area-inset-top)]">
-      <div className="mx-auto flex min-h-[var(--nav-h)] max-w-[1000px] items-center gap-3 px-[18px] py-[11px] max-[480px]:px-3.5 max-[480px]:py-2.5">
+      <div className="wrap flex min-h-[var(--nav-h)] items-center gap-3 py-[11px] max-[480px]:py-2.5">
         <Link href="/" className="flex min-w-0 items-center gap-2.5 text-heading no-underline">
           <Image
             src="/logo.png"
@@ -56,21 +56,41 @@ export function Navbar() {
 
         <button
           type="button"
-          className="ml-auto flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] text-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 active:scale-90 min-[760px]:hidden"
+          className="relative ml-auto flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] text-heading focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 active:scale-90 min-[760px]:hidden"
           aria-label={open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
           aria-expanded={open}
           aria-controls="navPanel"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <IconClose className="h-[22px] w-[22px]" /> : <IconBurger className="h-[22px] w-[22px]" />}
+          <IconBurger
+            className={`absolute h-[22px] w-[22px] transition-[opacity,transform] duration-200 ease-fluid ${
+              open ? 'scale-75 opacity-0' : 'scale-100 opacity-100'
+            }`}
+          />
+          <IconClose
+            className={`absolute h-[22px] w-[22px] transition-[opacity,transform] duration-200 ease-fluid ${
+              open ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
+            }`}
+          />
         </button>
       </div>
 
-      {open && (
+      {/* Always mounted (never conditionally rendered) so it can actually animate open
+       * and closed — a grid-rows 0fr/1fr transition is the CSS-only way to animate to
+       * "auto" height. `inert` keeps the collapsed panel's links out of tab order and
+       * out of the accessibility tree without a JS-timed unmount. */}
+      <div
+        id="navPanel"
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 ease-fluid min-[760px]:hidden ${
+          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
         <nav
-          id="navPanel"
           aria-label="Navegación principal"
-          className="flex flex-col border-t border-border px-[18px] pb-[calc(10px+env(safe-area-inset-bottom))] pt-1.5 max-[480px]:px-3.5 min-[760px]:hidden"
+          inert={!open}
+          className={`flex min-h-0 flex-col overflow-hidden border-t border-border px-[18px] pb-[calc(10px+env(safe-area-inset-bottom))] pt-1.5 transition-opacity duration-200 ease-fluid max-[480px]:px-3.5 ${
+            open ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href
@@ -89,7 +109,7 @@ export function Navbar() {
             )
           })}
         </nav>
-      )}
+      </div>
     </header>
   )
 }

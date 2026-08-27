@@ -62,7 +62,7 @@ export function MenuModal({
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose()
       }}
-      className={`fixed inset-0 z-[100] flex items-end justify-center bg-[var(--backdrop)] transition-opacity duration-[180ms] ease-out min-[640px]:items-center min-[640px]:p-5 ${
+      className={`fixed inset-0 z-[100] flex items-end justify-center bg-[var(--backdrop)] backdrop-blur-[3px] transition-opacity duration-[180ms] ease-fluid min-[640px]:items-center min-[640px]:p-5 ${
         open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
       }`}
     >
@@ -71,7 +71,7 @@ export function MenuModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="modalName"
-        className={`relative max-h-[88vh] w-full max-w-[440px] overflow-y-auto rounded-t-[22px] bg-surface px-5 pt-3.5 pb-[calc(24px+env(safe-area-inset-bottom))] shadow-[0_-12px_40px_-12px_var(--shadow)] transition-transform duration-200 ease-out min-[640px]:rounded-[24px] min-[640px]:px-5.5 min-[640px]:pt-6.5 min-[640px]:pb-7 ${
+        className={`relative max-h-[88vh] w-full max-w-[440px] overflow-y-auto rounded-t-[22px] bg-surface px-5 pt-3.5 pb-[calc(24px+env(safe-area-inset-bottom))] shadow-[0_-12px_40px_-12px_var(--shadow)] transition-transform duration-200 ease-fluid min-[640px]:rounded-[24px] min-[640px]:px-5.5 min-[640px]:pt-6.5 min-[640px]:pb-7 ${
           open ? 'translate-y-0 scale-100' : 'translate-y-3.5 scale-[0.98] min-[640px]:translate-y-1.5'
         }`}
       >
@@ -82,7 +82,7 @@ export function MenuModal({
           type="button"
           aria-label="Cerrar"
           onClick={onClose}
-          className="absolute top-3.5 right-3.5 flex h-9.5 w-9.5 items-center justify-center rounded-full border border-border bg-surface-2 text-lg leading-none text-ink hover:bg-chip-bg active:scale-90 active:bg-chip-bg"
+          className="absolute top-3.5 right-3.5 flex h-9.5 w-9.5 items-center justify-center rounded-full border border-border bg-surface-2 text-lg leading-none text-ink transition-[transform,background-color] duration-150 ease-fluid hover:bg-chip-bg active:scale-90 active:bg-chip-bg"
         >
           &times;
         </button>
@@ -92,7 +92,7 @@ export function MenuModal({
             type="button"
             aria-label="Compartir esta bebida"
             onClick={onShare}
-            className="absolute top-3.5 left-3.5 flex h-9.5 w-9.5 items-center justify-center rounded-full border border-border bg-surface-2 text-ink hover:bg-chip-bg hover:text-accent active:scale-90 active:bg-chip-bg"
+            className="absolute top-3.5 left-3.5 flex h-9.5 w-9.5 items-center justify-center rounded-full border border-border bg-surface-2 text-ink transition-[transform,background-color,color] duration-150 ease-fluid hover:bg-chip-bg hover:text-accent active:scale-90 active:bg-chip-bg"
           >
             <IconShare className="h-[17px] w-[17px]" />
           </button>
@@ -118,10 +118,10 @@ export function MenuModal({
         <div className="mt-2.5 flex flex-wrap justify-center gap-2.5">
           {item?.price12_16 && cat?.type === 'sizes' ? (
             <>
-              <span className="rounded-full bg-chip-bg px-3.5 py-1.25 text-sm font-bold tabular-nums text-accent">
+              <span className="rounded-full bg-chip-bg px-3.5 py-1.25 text-sm font-bold tabular-nums text-accent uppercase">
                 {cat.sizeLabels[0]} ${item.price12_16.a}
               </span>
-              <span className="rounded-full bg-chip-bg px-3.5 py-1.25 text-sm font-bold tabular-nums text-accent">
+              <span className="rounded-full bg-chip-bg px-3.5 py-1.25 text-sm font-bold tabular-nums text-accent uppercase">
                 {cat.sizeLabels[1]} ${item.price12_16.b}
               </span>
             </>

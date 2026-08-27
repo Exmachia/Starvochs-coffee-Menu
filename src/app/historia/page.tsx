@@ -14,23 +14,21 @@ export default function HistoriaPage() {
     <div className="wrap">
       <PageHero title="Nuestra historia">Por qué un Vocho rojo, y por qué café.</PageHero>
 
-      <div className="py-8.5 pb-11">
-        <PendingNotice
-          icon={IconHeart}
-          actions={
-            <>
-              <Button href="/menu">Ver el menú</Button>
-              <Button href="/" variant="ghost">
-                Volver al inicio
-              </Button>
-            </>
-          }
-        >
-          Estamos escribiendo esta historia con calma para contártela bien: por qué el Vocho,
-          cuándo empezó todo y quién está detrás de cada taza. Vuelve pronto o síguenos en redes
-          para no perderte el primer capítulo.
-        </PendingNotice>
-      </div>
+      <PendingNotice
+        icon={IconHeart}
+        actions={
+          <>
+            <Button href="/menu">Ver el menú</Button>
+            <Button href="/" variant="ghost">
+              Volver al inicio
+            </Button>
+          </>
+        }
+      >
+        Estamos escribiendo esta historia con calma para contártela bien: por qué el Vocho, cuándo
+        empezó todo y quién está detrás de cada taza. Vuelve pronto o síguenos en redes para no
+        perderte el primer capítulo.
+      </PendingNotice>
     </div>
   )
 }
