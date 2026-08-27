@@ -9,6 +9,8 @@
 /.impeccable/
 /agent/
 /skills-lock.json
+/CLAUDE.md
+/PRODUCT.md
 
 # dependencies
 /node_modules
