@@ -1,4 +1,5 @@
 import { Button } from '@/components/Button'
+import { HomeHero } from '@/components/HomeHero'
 import { IconHeart, IconMapPin, IconStar } from '@/components/icons'
 import { LocationsMapLoader } from '@/components/LocationsMapLoader'
 import { FeaturedGrid } from '@/components/menu/FeaturedGrid'
@@ -12,10 +13,10 @@ const featuredItems = destacados.type === 'featured' ? destacados.items : []
 export default function HomePage() {
   return (
     <div className="wrap">
-      <h1 className="sr-only">Starvochs Coffee</h1>
+      <HomeHero />
 
       <section className="pt-9 pb-10 min-[680px]:pt-11 min-[680px]:pb-14" aria-labelledby="destacados-h">
-        <SectionHead id="destacados-h" icon={IconStar} variant="hero">
+        <SectionHead id="destacados-h" icon={IconStar} variant="default">
           Lo más pedido
         </SectionHead>
         <FeaturedGrid items={featuredItems} action={{ type: 'link', href: '/menu' }} layout="even" />
@@ -33,10 +34,12 @@ export default function HomePage() {
         <SectionHead id="encuentranos-h" icon={IconMapPin} variant="compact">
           Encuéntranos
         </SectionHead>
-        <div className="h-72 overflow-hidden rounded-2xl border border-border">
-          <LocationsMapLoader locations={LOCATIONS} />
+        <div className="h-72 overflow-hidden rounded-2xl border border-border bg-surface p-2">
+          <div className="h-full w-full overflow-hidden rounded-xl">
+            <LocationsMapLoader locations={LOCATIONS} />
+          </div>
         </div>
-        <p className="mt-4 max-w-[60ch] text-[15px] leading-relaxed text-ink-muted">
+        <p className="mt-4 max-w-[60ch] text-body-muted leading-relaxed text-ink-muted">
           Visítanos en cualquiera de nuestras sucursales. Aún no tomamos pedidos por WhatsApp ni
           apps, así que te esperamos en persona para prepararte tu bebida.
         </p>
@@ -54,7 +57,7 @@ export default function HomePage() {
         <SectionHead id="historia-h" icon={IconHeart} variant="compact">
           Nuestra historia
         </SectionHead>
-        <p className="max-w-[60ch] text-[15px] leading-relaxed text-ink-muted">
+        <p className="max-w-[60ch] text-body-muted leading-relaxed text-ink-muted">
           Así es Starvochs. Todavía estamos escribiendo esta historia con calma, para contártela
           bien.
         </p>

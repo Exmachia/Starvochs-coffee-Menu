@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="wrap">
           <Footer />
         </div>
-        <GoogleAnalytics gaId="G-G6LB4R7208" />
+        <GoogleAnalytics gaId="G-9F4NCJY7BP" />
       </body>
     </html>
   )

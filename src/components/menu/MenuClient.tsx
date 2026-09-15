@@ -106,6 +106,11 @@ export function MenuClient() {
     setModalOpen(false)
     closeUnmountTimer.current = setTimeout(() => setModalMounted(false), 180)
     lastFocused.current?.focus()
+    // Mirror the close in the URL via replaceState (not pushState): keeps a refresh from
+    // reopening a modal the user already dismissed, without adding a history entry per
+    // open/close — pushState here would mean tapping through several drinks stacks that
+    // many "back" presses before the user actually leaves /menu.
+    if (location.hash) history.replaceState(null, '', location.pathname)
   }
 
   // Lock body scroll while the modal is open.
@@ -120,6 +125,10 @@ export function MenuClient() {
     lastFocused.current = document.activeElement as HTMLElement
     setModal({ kind: 'item', item, cat })
     showModal()
+    // replaceState, not pushState — see closeModal for why. This keeps the hash (and
+    // therefore a refresh, or the share button's URL) always in sync with whatever
+    // item is currently open, without touching browser history.
+    history.replaceState(null, '', `#${item.id}`)
   }
 
   function openExtraModal(key: ExtraKey) {

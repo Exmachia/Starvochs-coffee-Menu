@@ -6,7 +6,14 @@
    regardless of OS/device theme, so it always reads as "the menu on the wall". */
 @theme {
   --color-bg: #f4e9ce;
-  --color-surface: #fbf3df;
+  /* --color-surface used to sit only 5 points lighter than --color-bg — cards barely
+   * separated from the page. Brightened it so cards read as genuinely lifted "paper".
+   * --color-surface-2 and --color-chip-bg stay at their original values on purpose:
+   * text-accent sits directly on both (hover price rows, modal price chips) and was
+   * already right at the edge of AA contrast (4.45–4.49:1) — darkening either to chase
+   * more "depth" pushes that below 4.5:1. Real resting shadows (see FeaturedGrid,
+   * CategoryPanel, PendingNotice, sucursales cards) carry the depth fix instead. */
+  --color-surface: #fdf9ee;
   --color-surface-2: #f1e3be;
   --color-border: #8b7d5b;
   --color-ink: #2a2118;
@@ -21,6 +28,11 @@
   --font-sans: var(--font-work-sans), system-ui, sans-serif;
   --font-display: var(--font-fredoka), sans-serif;
   --font-script: var(--font-caveat), cursive;
+
+  /* Shared secondary-paragraph size: five components (page intros, pending-notice
+   * copy, page-hero subtitles, the 404 message, branch hours) had independently
+   * picked 14px/15px/15.5px for the same "muted supporting text" role. One token. */
+  --text-body-muted: 15px;
 
   /* Shared deceleration curve for interactive motion (drawer, modal, hover/press) —
    * a smooth, no-overshoot settle, matching a critically-damped spring's feel
