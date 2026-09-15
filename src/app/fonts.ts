@@ -1,9 +1,9 @@
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Fredoka } from 'next/font/google'
 import localFont from 'next/font/local'
 
-export const fredoka = Plus_Jakarta_Sans({
+export const fredoka = Fredoka({
   subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
+  weight: ['500', '600', '700'],
   style: 'normal',
   variable: '--font-fredoka',
   display: 'swap',

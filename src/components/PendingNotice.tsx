@@ -10,9 +10,9 @@ export function PendingNotice({
   actions: ReactNode
 }) {
   return (
-    <div className="mt-15 mb-11 max-w-[560px] flex flex-col items-start gap-3.5 rounded-[20px] border border-border bg-surface p-5.5 px-5">
+    <div className="mt-15 mb-11 max-w-[560px] flex flex-col items-start gap-3.5 rounded-[20px] border border-border bg-surface p-5.5 px-5 shadow-[0_2px_8px_-4px_var(--shadow)]">
       <Icon className="h-7.5 w-7.5 text-accent" />
-      <p className="max-w-[56ch] text-[15px] leading-relaxed text-ink">{children}</p>
+      <p className="max-w-[56ch] text-body-muted leading-relaxed text-ink">{children}</p>
       <div className="flex flex-wrap gap-2.5">{actions}</div>
     </div>
   )

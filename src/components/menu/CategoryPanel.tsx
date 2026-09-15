@@ -20,7 +20,7 @@ function PriceRow({
     <button
       type="button"
       onClick={onClick}
-      className="flex min-h-12.5 w-full items-center gap-2.5 border-b border-border px-1 py-3 text-left text-ink transition-colors duration-150 ease-fluid hover:bg-surface-2 active:bg-surface-2 focus-visible:bg-surface-2 focus-visible:outline-none"
+      className="flex min-h-12.5 w-full items-center gap-2.5 border-b border-border px-1 py-3 text-left text-ink transition-colors duration-150 ease-fluid hover:bg-surface-2 active:bg-surface-2 focus-visible:bg-surface-2 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-[-2px]"
     >
       <div className="min-w-0 flex-1">
         <div className="text-[15px] font-semibold text-ink">{item.name}</div>
@@ -129,7 +129,7 @@ export function CategoryPanel({
               key={key}
               type="button"
               onClick={() => onSelectExtra(key)}
-              className="flex min-h-12.5 items-center justify-between gap-2.5 rounded-[14px] border border-border/60 bg-surface px-3.75 py-3 text-left text-ink transition-[transform,background] duration-150 ease-fluid hover:-translate-y-0.25 hover:bg-surface-2 active:scale-[0.97] active:bg-surface-2"
+              className="flex min-h-12.5 items-center justify-between gap-2.5 rounded-[14px] border border-border/60 bg-surface px-3.75 py-3 text-left text-ink shadow-[0_2px_8px_-4px_var(--shadow)] transition-[transform,background] duration-150 ease-fluid hover:-translate-y-0.25 hover:bg-surface-2 active:scale-[0.97] active:bg-surface-2"
             >
               <span className="text-[14.5px] font-semibold">{EXTRAS[key].name}</span>
               <b className="font-bold tabular-nums text-accent">${EXTRAS[key].price}</b>

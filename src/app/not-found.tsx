@@ -12,7 +12,7 @@ export default function NotFound() {
       <h1 className="m-0 font-display text-[clamp(24px,5vw,36px)] font-bold tracking-[0.06em] text-heading uppercase">
         Página no encontrada
       </h1>
-      <p className="max-w-[56ch] text-[15.5px] leading-relaxed text-ink-muted">
+      <p className="max-w-[56ch] text-body-muted leading-relaxed text-ink-muted">
         La página que buscas no existe o cambió de dirección. Prueba desde el menú o vuelve al
         inicio.
       </p>

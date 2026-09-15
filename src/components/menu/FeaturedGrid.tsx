@@ -4,7 +4,7 @@ import { GlassIcon } from '@/components/menu/GlassIcon'
 import { priceLabel, type MenuItem } from '@/data/menu'
 
 const cardClass =
-  'flex flex-col gap-2 rounded-[18px] border border-border/60 bg-surface p-2.75 pb-3.25 text-left text-ink no-underline transition-[transform,box-shadow] duration-150 ease-fluid hover:-translate-y-0.75 hover:shadow-[0_10px_24px_-12px_var(--shadow)] active:scale-[0.97] min-[520px]:gap-2.5 min-[520px]:rounded-[20px] min-[520px]:p-3.5 min-[520px]:pb-4 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2'
+  'flex flex-col gap-2 rounded-[18px] border border-border/60 bg-surface p-2.75 pb-3.25 text-left text-ink no-underline shadow-[0_2px_8px_-4px_var(--shadow)] transition-[transform,box-shadow] duration-150 ease-fluid hover:-translate-y-0.75 hover:shadow-[0_10px_24px_-12px_var(--shadow)] active:scale-[0.97] min-[520px]:gap-2.5 min-[520px]:rounded-[20px] min-[520px]:p-3.5 min-[520px]:pb-4 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2'
 
 function CardContent({ item }: { item: MenuItem }) {
   return (
@@ -28,7 +28,7 @@ function CardContent({ item }: { item: MenuItem }) {
 }
 
 const evenCardClass =
-  'flex flex-col gap-2.5 rounded-[20px] border border-border/60 bg-surface p-3 pb-3.5 text-left text-ink no-underline transition-[transform,box-shadow] duration-150 ease-fluid hover:-translate-y-0.75 hover:shadow-[0_10px_24px_-12px_var(--shadow)] active:scale-[0.97] min-[520px]:gap-3 min-[520px]:rounded-[22px] min-[520px]:p-4 min-[520px]:pb-4.5 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2'
+  'flex flex-col gap-2.5 rounded-[20px] border border-border/60 bg-surface p-3 pb-3.5 text-left text-ink no-underline shadow-[0_2px_8px_-4px_var(--shadow)] transition-[transform,box-shadow] duration-150 ease-fluid hover:-translate-y-0.75 hover:shadow-[0_10px_24px_-12px_var(--shadow)] active:scale-[0.97] min-[520px]:gap-3 min-[520px]:rounded-[22px] min-[520px]:p-4 min-[520px]:pb-4.5 focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2'
 
 function EvenCardContent({ item }: { item: MenuItem }) {
   return (
