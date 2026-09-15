@@ -29,7 +29,7 @@ export default function SucursalesPage() {
             className="flex flex-col gap-2.5 rounded-2xl border border-border bg-surface p-4.5 shadow-[0_2px_8px_-4px_var(--shadow)]"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 className="font-display text-[17px] font-semibold text-heading">{loc.name}</h2>
+              <h2 className="font-display text-[16px] font-semibold text-heading">{loc.name}</h2>
               <OpenBadge location={loc} />
             </div>
             {loc.address && (
