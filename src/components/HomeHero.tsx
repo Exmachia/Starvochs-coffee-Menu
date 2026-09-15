@@ -41,16 +41,9 @@ export function HomeHero() {
         )}
 
         <div className="relative max-w-[46ch]">
-          <p className="font-script text-2xl text-accent-contrast/90 min-[680px]:text-[26px]">
-            Bienvenido a
-          </p>
-          <h1 className="mt-1 text-balance font-display text-[32px] font-semibold tracking-[0.2px] text-accent-contrast uppercase min-[680px]:text-[44px]">
-            El café con espíritu de Vocho rojo
+          <h1 className="text-balance font-display text-[32px] font-semibold tracking-[0.2px] text-accent-contrast uppercase min-[680px]:text-[44px]">
+            Un Vocho rojo. Buen café.
           </h1>
-          <p className="mt-3.5 max-w-[42ch] text-body-muted leading-relaxed text-accent-contrast/85">
-            Especialidad de la casa, hecha con calma y ganas de compartirla. Sin apps ni pedidos en
-            línea — te esperamos en persona.
-          </p>
           <div className="mt-5 flex flex-wrap gap-2.5">
             <Button href="/menu" variant="accent">
               Ver el menú completo

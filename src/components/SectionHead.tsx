@@ -32,7 +32,7 @@ export function SectionHead({ id, icon: Icon, children, variant = 'default' }: S
       <h2 id={id} className={headingClass[variant]}>
         {children}
       </h2>
-      <div className="h-0.5 flex-1 bg-border" />
+      
     </div>
   )
 }
